@@ -1,6 +1,13 @@
 :root {
-    --brand-color: #013755;
+    --brand-color: #000000;
 }
+
+*{
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
 
 .navbar {
     background-color: var(--brand-color);

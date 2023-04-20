@@ -22,4 +22,9 @@ class AlbumController extends AbstractActionController
             'albums' => $this->table->fetchAll()
         ]);
     }
+
+    public function createAction(): ViewModel
+    {
+        return new ViewModel();
+    }
 }

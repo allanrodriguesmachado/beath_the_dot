@@ -11,10 +11,20 @@ use Laminas\ServiceManager\Factory\InvokableFactory;
 return [
     'router' => [
         'routes' => [
+            'home' => [
+                'type'    => Literal::class,
+                'options' => [
+                    'route'    => '/',
+                    'defaults' => [
+                        'controller' => Controller\AlbumController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
             'album' => [
                 'type' => Segment::class,
                 'options' => [
-                    'route' => '/album[/:action]',
+                    'route' => '/album[/:action[/:id]]',
                     'defaults' => [
                         'controller' => Controller\AlbumController::class,
                         'action' => 'index',
