@@ -1,17 +1,18 @@
 <?php
 
-$title = 'My albums';
+$title = 'Meus albums';
 $this->headTitle($title);
 ?>
-<h1><?= $this->escapeHtml($title) ?></h1>
-<p>
-    <a href="<?= $this->url('album', ['action' => 'create']) ?>">Add new album</a>
+<h1 class="text-muted" ><?= $this->escapeHtml($title) ?></h1>
+
+<p class="d-flex justify-content-end container">
+    <a class="btn btn-success" href="<?= $this->url('album', ['action' => 'create']) ?>">Adicionar Album</a>
 </p>
 
-<table class="table">
+<table class="table text-center">
     <tr>
-        <th>Title</th>
-        <th>Artist</th>
+        <th>Titulo</th>
+        <th>Artista</th>
         <th>&nbsp;</th>
     </tr>
     <?php foreach ($albums as $album) : ?>
@@ -19,8 +20,8 @@ $this->headTitle($title);
             <td><?= $this->escapeHtml($album->title) ?></td>
             <td><?= $this->escapeHtml($album->artist) ?></td>
             <td>
-                <a href="<?= $this->url('album', ['action' => 'edit', 'id' => $album->id]) ?>">Edit</a>
-                <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album->id]) ?>">Delete</a>
+                <a class="btn btn-success" href="<?= $this->url('album', ['action' => 'edit', 'id' => $album->id]) ?>">Editar</a>
+                <a class="btn btn-danger" href="<?= $this->url('album', ['action' => 'delete', 'id' => $album->id]) ?>">Deletar</a>
             </td>
         </tr>
     <?php endforeach; ?>

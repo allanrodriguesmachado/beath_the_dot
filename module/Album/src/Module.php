@@ -3,11 +3,13 @@
 declare(strict_types=1);
 
 namespace Album;
+
 use Album\Controller\AlbumController;
 use Album\Model\AlbumTable;
 use Laminas\Db\Adapter\AdapterInterface;
 use Laminas\Db\ResultSet\ResultSet;
 use Laminas\Db\TableGateway\TableGateway;
+
 class Module
 {
     public function getConfig(): array
@@ -15,7 +17,7 @@ class Module
         return include __DIR__ . '/../config/module.config.php';
     }
 
-    public function getServiceConfig()
+    public function getServiceConfig(): array
     {
         return [
             'factories' => [

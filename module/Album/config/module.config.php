@@ -11,7 +11,7 @@ use Laminas\Router\Http\Segment;
 return [
     'router' => [
         'routes' => [
-            'home' => [
+            'list' => [
                 'type'    => Literal::class,
                 'options' => [
                     'route'    => '/',
@@ -45,7 +45,6 @@ return [
         ],
         'strategies' => [
             'ViewJsonStrategy',
-
         ],
     ],
 ];
