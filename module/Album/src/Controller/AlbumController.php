@@ -18,23 +18,23 @@ class AlbumController extends AbstractActionController
     {
         $this->table = $table;
     }
+
     public function indexAction(): ViewModel
     {
-        $this->flashMessenger()->addInfoMessage('I am a warning message');
         return new ViewModel([
             'albums' => $this->table->fetchAll()
         ]);
     }
 
-    public function createAction(): \Laminas\Http\Response | array
+    public function createAction(): \Laminas\Http\Response|array|ViewModel
     {
         $form = new AlbumForm();
 
-        $form->get('submit')->setValue('Add');
+        $form->get('submit')->setValue('create');
 
         $request = $this->getRequest();
 
-        if (! $request->isPost()) {
+        if (!$request->isPost()) {
             return ['form' => $form];
         }
 
@@ -42,19 +42,24 @@ class AlbumController extends AbstractActionController
         $form->setInputFilter($album->getInputFilter());
         $form->setData($request->getPost());
 
-        if (! $form->isValid()) {
-            return ['form' => $form];
+        if ($form->isValid()) {
+            try {
+                $album->exchangeArray($form->getData());
+                $this->table->saveAlbum($album);
+                $this->flashMessenger()->addInfoMessage('I am a warning message');
+                return $this->redirect()->toRoute('album');
+            } catch (\RuntimeException $exception) {
+                $this->flashMessenger()->addInfoMessage($exception->getMessage());
+                return $this->redirect()->toRoute('album');
+            }
         }
 
-        $album->exchangeArray($form->getData());
-        $this->table->saveAlbum($album);
-
-        return $this->redirect()->toRoute('album');
+        return new ViewModel(['form' => $form]);
     }
 
     public function editAction(): \Laminas\Http\Response|array
     {
-        $id = (int) $this->params()->fromRoute('id', 0);
+        $id = (int)$this->params()->fromRoute('id', 0);
 
         if (0 === $id) {
             return $this->redirect()->toRoute('album', ['action' => 'add']);
@@ -73,14 +78,14 @@ class AlbumController extends AbstractActionController
         $request = $this->getRequest();
         $viewData = ['id' => $id, 'form' => $form];
 
-        if (! $request->isPost()) {
+        if (!$request->isPost()) {
             return $viewData;
         }
 
         $form->setInputFilter($album->getInputFilter());
         $form->setData($request->getPost());
 
-        if (! $form->isValid()) {
+        if (!$form->isValid()) {
             return $viewData;
         }
 
@@ -95,7 +100,7 @@ class AlbumController extends AbstractActionController
 
     public function deleteAction(): \Laminas\Http\Response|array
     {
-        $id = (int) $this->params()->fromRoute('id', 0);
+        $id = (int)$this->params()->fromRoute('id', 0);
         if (!$id) {
             return $this->redirect()->toRoute('album');
         }
@@ -105,15 +110,15 @@ class AlbumController extends AbstractActionController
             $del = $request->getPost('del', 'No');
 
             if ($del == 'Yes') {
-                $id = (int) $request->getPost('id');
+                $id = (int)$request->getPost('id');
                 $this->table->deleteAlbum($id);
+                $this->flashMessenger()->addErrorMessage('I am a warning message');
             }
-
             return $this->redirect()->toRoute('album');
         }
 
         return [
-            'id'    => $id,
+            'id' => $id,
             'album' => $this->table->getAlbum($id),
         ];
     }

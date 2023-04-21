@@ -25,6 +25,5 @@ return [
     'Laminas\Validator',
     'Laminas\DeveloperTools',
     'Laminas\Diactoros',
-    'Application',
     'Album'
 ];
