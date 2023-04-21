@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Album;
 
+use Album\Controller\AlbumController;
 use Laminas\Router\Http\Literal;
 use Laminas\Router\Http\Segment;
-use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
     'router' => [
@@ -16,7 +16,7 @@ return [
                 'options' => [
                     'route'    => '/',
                     'defaults' => [
-                        'controller' => Controller\AlbumController::class,
+                        'controller' => AlbumController::class,
                         'action'     => 'index',
                     ],
                 ],

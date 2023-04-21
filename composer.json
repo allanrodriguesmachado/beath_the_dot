@@ -25,7 +25,9 @@
         "laminas/laminas-mvc-middleware": "^2.3.0",
         "laminas/laminas-session": "^2.16.0",
         "laminas/laminas-di": "^3.12.0",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "laminas/laminas-form": "*",
+        "laminas/laminas-mvc-plugin-flashmessenger": "*"
     },
     "autoload": {
         "psr-4": {
@@ -35,7 +37,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "ApplicationTest\\": "module/Application/test/"
+            "ApplicationTest\\": "module/Application/test/",
+            "AlbumTest\\": "module/Album/test/"
         }
     },
     "scripts": {
@@ -78,6 +81,7 @@
     },
     "require-dev": {
         "laminas/laminas-developer-tools": "^2.8.0",
-        "laminas/laminas-test": "^4.7.0"
+        "laminas/laminas-test": "*",
+        "phpunit/phpunit": "*"
     }
 }
