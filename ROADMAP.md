@@ -1,11 +1,47 @@
-
-## [ROADMAP](ROADMAP.md)
-### Introdução
-0. [Delimitadores De Código](/javascript/1-IntroductionToJavaScript/)
+# Roadmap - PHP
 
 
+## 1.1 Basíco
 
-### You can find me 📞
+- [x]  Delimitadores de código
+- [x]  Comentários
+- [x]  Comandos de saída
+
+## 2.1 Variáveis 
+
+- [x]  Variáveis
+- [x]  Booleano
+- [x]  Numérico
+- [x]  String
+- [x]  Array
+- [x]  Objeto
+- [x]  Recurso
+- [x]  Misto
+- [x]  Callback
+- [x]  Null
+- [x]  Constante
+
+## 3.1 Operadores
+
+
+## 4.1 Estrutura de controle
+
+
+## 5.1 Requisição de arquivos
+
+
+## 6.1 Manipulação de funções
+
+## 7.1 Manipulação de arquivos e diretórios
+
+
+## 8.1 Manipulação de string
+
+## 9.1 Manipulação de arrays
+
+## 10.1 Manipulação de Objetos
+
+#### You can find me 📞
 
 <p>
 <a href="mailto:allan.rodrigues14@hotmail.com" alt="E-mail" target="_blank">
@@ -20,5 +56,5 @@
 </a>
 </p>
 
-#
+###
 @allanrodriguesmachado
