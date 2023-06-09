@@ -125,14 +125,6 @@ console.log(person.name); // Output: John
 Here, `const` is used to declare a constant object `person`. By applying `Object.freeze()`, the object becomes immutable, and any attempts to modify its properties will have no effect.
 
 
-2. Variable Naming:
-
-3. Primitive Data Types:
-
-4. Variable Scope:
-
-5. Variable Assignment and Reassignment:
-
 #### pt-BR
 
 #
