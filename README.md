@@ -1,24 +1,90 @@
+# Implementação de Pilha utilizando Vetores - Estrutura de Dados
 
-## [ROADMAP](ROADMAP.md)
-### Introdução
-0. [Delimitadores De Código](/javascript/1-IntroductionToJavaScript/)
+Este repositório contém a implementação de uma estrutura de dados de pilha utilizando vetores em C++ orientado a objetos. Uma pilha é uma estrutura de dados que segue a regra do "último a entrar, primeiro a sair" (LIFO - Last-In-First-Out), onde os elementos são adicionados e removidos apenas do topo da pilha.
 
+## Como usar
 
+1. **Clone o repositório:**
 
-### You can find me 📞
+   ```
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   ```
 
-<p>
-<a href="mailto:allan.rodrigues14@hotmail.com" alt="E-mail" target="_blank">
-    <img src="https://img.shields.io/badge/-hotmail-0564f2?style=for-the-badge&logo=hotmail&logoColor=white" />
-</a>
-<a href="https://www.linkedin.com/in/allanrodriguesmachado/" alt="LinkedIn" target="_blank">
-    <img src="https://img.shields.io/badge/-LinkedIn-blue?style=for-the-badge&logo=Linkedin&logoColor=white " />
-</a>
+2. **Navegue até o diretório do projeto:**
 
-<a href="https://dev.to/allanrodriguesmachado" alt="Dev.To" target="_blank">
-    <img src="https://img.shields.io/badge/dev.to-black?style=for-the-badge&logo=dev.to&logoColor=logoColor=white" />
-</a>
-</p>
+   ```
+   cd seu-repositorio/PilhaVector
+   ```
 
-#
-@allanrodriguesmachado
+3. **Compile o código:**
+
+   Utilize um compilador C++ para compilar o arquivo `main.cpp`:
+
+   ```
+   g++ main.cpp -o pilha
+   ```
+
+4. **Execute o programa:**
+
+   ```
+   ./pilha
+   ```
+
+## Funcionalidades
+
+A implementação da pilha oferece as seguintes funcionalidades:
+
+- `push(valor)`: Adiciona um elemento ao topo da pilha.
+- `pop()`: Remove e retorna o elemento do topo da pilha.
+- `top()`: Retorna o elemento do topo da pilha sem removê-lo.
+- `isEmpty()`: Verifica se a pilha está vazia.
+- `isFull()`: Verifica se a pilha está cheia (caso haja um limite de tamanho).
+- `size()`: Retorna a quantidade de elementos na pilha.
+
+## Exemplo de Uso
+
+```cpp
+#include "Pilha.h"
+#include <iostream>
+
+int main() {
+    Pilha pilha;
+
+    pilha.push(10);
+    pilha.push(20);
+    pilha.push(30);
+
+    std::cout << "Topo da pilha: " << pilha.top() << std::endl;
+    std::cout << "Tamanho da pilha: " << pilha.size() << std::endl;
+
+    pilha.pop();
+
+    std::cout << "Topo da pilha após pop: " << pilha.top() << std::endl;
+
+    if (pilha.isEmpty()) {
+        std::cout << "A pilha está vazia." << std::endl;
+    } else {
+        std::cout << "A pilha não está vazia." << std::endl;
+    }
+
+    if (pilha.isFull()) {
+        std::cout << "A pilha está cheia." << std::endl;
+    } else {
+        std::cout << "A pilha não está cheia." << std::endl;
+    }
+
+    return 0;
+}
+```
+
+## Contribuições
+
+Contribuições são bem-vindas! Se você encontrar problemas ou tiver melhorias para propor, sinta-se à vontade para abrir um "issue" ou enviar um "pull request".
+
+## Licença
+
+Este projeto é licenciado sob a [Licença MIT](LICENSE).
+
+---
+
+Espero que este readme atenda às suas necessidades! Certifique-se de personalizar as seções com suas informações específicas antes de publicar no GitHub. Se você tiver mais dúvidas ou precisar de mais ajuda, fique à vontade para perguntar.
