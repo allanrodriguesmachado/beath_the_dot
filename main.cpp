@@ -4,11 +4,11 @@
 using namespace std;
 
 void menuStack() {
-    cout << "Selecione" << endl;
-    cout << "1: Inserir um elemento" << endl;
-    cout << "2: Remover um elemento" << endl;
-    cout << "3: Imprimir um elemento" << endl;
-    cout << "4: Finalizar" << endl;
+    cout << "Options" << endl;
+    cout << "1: Insert element" << endl;
+    cout << "2: Remove element" << endl;
+    cout << "3: Print element" << endl;
+    cout << "4: Finish" << endl;
 };
 
 int main() {
@@ -24,14 +24,14 @@ int main() {
         cin >> options;
 
         if (options == 1) {
-            cout << "Digite o elemento a ser inserido:" << endl;
+            cout << "Enter the element to be inserted:" << endl;
             cin >> itemStack;
             oneStack.push(itemStack);
         }
 
         if (options == 2) {
             itemStack = oneStack.pop();
-            cout << "Elemento removido:" << itemStack << endl;
+            cout << "Element removed:" << itemStack << endl;
         }
 
         if (options == 3) {
