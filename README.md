@@ -1,19 +1,21 @@
 # Implementação de Pilha utilizando Vetores - Estrutura de Dados
 
-Este repositório contém a implementação de uma estrutura de dados de pilha utilizando vetores em C++ orientado a objetos. Uma pilha é uma estrutura de dados que segue a regra do "último a entrar, primeiro a sair" (LIFO - Last-In-First-Out), onde os elementos são adicionados e removidos apenas do topo da pilha.
+Este repositório contém a implementação de uma estrutura de dados de pilha utilizando vetores em C++ orientado a
+objetos. Uma pilha é uma estrutura de dados que segue a regra do "último a entrar, primeiro a sair" (LIFO -
+Last-In First-Out), onde os elementos são adicionados e removidos apenas do topo da pilha.
 
 ## Como usar
 
 1. **Clone o repositório:**
 
    ```
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/allanrodriguesmachado/VectorStackDataStructure
    ```
 
 2. **Navegue até o diretório do projeto:**
 
    ```
-   cd seu-repositorio/PilhaVector
+   cd seu-repositorio/VectorStackDataStructure 
    ```
 
 3. **Compile o código:**
@@ -21,13 +23,13 @@ Este repositório contém a implementação de uma estrutura de dados de pilha u
    Utilize um compilador C++ para compilar o arquivo `main.cpp`:
 
    ```
-   g++ main.cpp -o pilha
+   g++ main.cpp -o stack
    ```
 
 4. **Execute o programa:**
 
    ```
-   ./pilha
+   ./stack
    ```
 
 ## Funcionalidades
@@ -36,42 +38,46 @@ A implementação da pilha oferece as seguintes funcionalidades:
 
 - `push(valor)`: Adiciona um elemento ao topo da pilha.
 - `pop()`: Remove e retorna o elemento do topo da pilha.
-- `top()`: Retorna o elemento do topo da pilha sem removê-lo.
 - `isEmpty()`: Verifica se a pilha está vazia.
 - `isFull()`: Verifica se a pilha está cheia (caso haja um limite de tamanho).
 - `size()`: Retorna a quantidade de elementos na pilha.
+- `print()`: Imprime os elementos na pilha.
 
 ## Exemplo de Uso
 
 ```cpp
-#include "Pilha.h"
 #include <iostream>
+#include "stack.cpp"
+
+using namespace std;
 
 int main() {
-    Pilha pilha;
+    stack oneStack;
+    integerItemType itemStack;
+    int options;
 
-    pilha.push(10);
-    pilha.push(20);
-    pilha.push(30);
+    cout << "Vector Stack Data Structure \n" << endl;
 
-    std::cout << "Topo da pilha: " << pilha.top() << std::endl;
-    std::cout << "Tamanho da pilha: " << pilha.size() << std::endl;
+    do {
+        menuStack();
 
-    pilha.pop();
+        cin >> options;
 
-    std::cout << "Topo da pilha após pop: " << pilha.top() << std::endl;
+        if (options == 1) {
+            cout << "Digite o elemento a ser inserido:" << endl;
+            cin >> itemStack;
+            oneStack.push(itemStack);
+        }
 
-    if (pilha.isEmpty()) {
-        std::cout << "A pilha está vazia." << std::endl;
-    } else {
-        std::cout << "A pilha não está vazia." << std::endl;
-    }
+        if (options == 2) {
+            itemStack = oneStack.pop();
+            cout << "Elemento removido:" << itemStack << endl;
+        }
 
-    if (pilha.isFull()) {
-        std::cout << "A pilha está cheia." << std::endl;
-    } else {
-        std::cout << "A pilha não está cheia." << std::endl;
-    }
+        if (options == 3) {
+            oneStack.print();
+        }
+    } while (options != 0);
 
     return 0;
 }
@@ -79,9 +85,10 @@ int main() {
 
 ## Contribuições
 
-Contribuições são bem-vindas! Se você encontrar problemas ou tiver melhorias para propor, sinta-se à vontade para abrir um "issue" ou enviar um "pull request".
+Contribuições são bem-vindas! Se você encontrar problemas ou tiver melhorias para propor, sinta-se à vontade para abrir
+um "issue" ou enviar um "pull request".
 
-## Licença
+## Desenvolvedor
 
-Este projeto é licenciado sob a [Licença MIT](LICENSE).
-
+[<img src="https://avatars.githubusercontent.com/u/54523516?v=4" width="100px;" alt="Foto do Allan Machado no GitHub"/>
+<br><sub>Allan Rodrigues</sub>](https://www.linkedin.com/in/allanrodriguesmachado/)  
