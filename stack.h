@@ -26,7 +26,7 @@ public:
     bool isFull();
 
     // Print stack size
-    void size();
+    int size();
 
     // Print stack output
     void print();
