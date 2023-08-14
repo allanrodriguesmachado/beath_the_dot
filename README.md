@@ -85,6 +85,3 @@ Contribuições são bem-vindas! Se você encontrar problemas ou tiver melhorias
 
 Este projeto é licenciado sob a [Licença MIT](LICENSE).
 
----
-
-Espero que este readme atenda às suas necessidades! Certifique-se de personalizar as seções com suas informações específicas antes de publicar no GitHub. Se você tiver mais dúvidas ou precisar de mais ajuda, fique à vontade para perguntar.
