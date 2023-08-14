@@ -32,7 +32,7 @@ integerItemType stack::pop() {
 
     if (!isEmpty()) {
         sizeStack--;
-        return stackStructure[sizeStack - 1];
+        return stackStructure[sizeStack];
     }
 
     return 0;
