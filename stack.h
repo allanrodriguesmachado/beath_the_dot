@@ -7,28 +7,20 @@ private:
     integerItemType *stackStructure;
 
 public:
-    //Construct
     stack();
 
-    //Destruct
     ~stack();
 
-    // Insert item stack -- PUSH
     void push(integerItemType itemStack);
 
-    // Remove item stack - POP
     integerItemType pop();
 
-    //Checking if the stack is empty
-    bool isEmpty();
+    bool isEmpty() const;
 
-    //Checking if the stack is full
-    bool isFull();
+    bool isFull() const;
 
-    // Print stack size
-    int size();
+    int size() const;
 
-    // Print stack output
     void print();
 };
 

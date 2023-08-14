@@ -4,19 +4,15 @@
 using namespace std;
 
 stack::stack() {
-    // Initial stack size at zero
     sizeStack = 0;
 
-    // Creating vector with max item
     stackStructure = new integerItemType[itemMax];
 }
 
 stack::~stack() {
-    //Destruct vector struct
     delete[] stackStructure;
 }
 
-// Insert item stack -- PUSH
 void stack::push(integerItemType itemStack) {
     if (isFull()) {
         cout << "Ops, a pilha esta cheia" << endl;
@@ -28,7 +24,6 @@ void stack::push(integerItemType itemStack) {
     }
 }
 
-// Remove item stack - POP
 integerItemType stack::pop() {
     if (isEmpty()) {
         cout << "Ops, a pilha esta vazia" << endl;
@@ -43,22 +38,18 @@ integerItemType stack::pop() {
     return 0;
 }
 
-//Checking if the stack is empty
-bool stack::isEmpty() {
+bool stack::isEmpty() const {
     return (sizeStack == 0);
 }
 
-//Checking if the stack is full
-bool stack::isFull() {
+bool stack::isFull() const {
     return (sizeStack == itemMax);
 }
 
-// Print stack size
-int stack::size()  {
+int stack::size() const  {
     return  sizeStack;
 }
 
-// Print stack output
 void stack::print() {
     cout << "Pilha: [ ";
         for (int i = 0; i < sizeStack; i++) {
