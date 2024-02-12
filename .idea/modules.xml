@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/VectorStackDataStructure.iml" filepath="$PROJECT_DIR$/.idea/VectorStackDataStructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/beath_the_dot.iml" filepath="$PROJECT_DIR$/.idea/beath_the_dot.iml" />
     </modules>
   </component>
 </project>
